@@ -1,0 +1,12 @@
+aws_region         = "us-east-1"
+project_name       = "openai-learning"
+environment        = "dev"
+cluster_name       = "openai-learning-eks"
+kubernetes_version = "1.30"
+
+# Instance types
+ec2_instance_type  = "t3.medium"
+node_instance_type = "t3.medium"
+
+# Optional: set an existing EC2 key pair name
+ec2_key_name = null
