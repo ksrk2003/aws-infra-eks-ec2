@@ -25,7 +25,7 @@ variable "vpc_cidr" {
 variable "ec2_instance_type" {
   description = "Ubuntu VM instance type"
   type        = string
-  default     = "t3.medium"
+  default     = "c7i-flex.large"
 }
 
 variable "ec2_key_name" {

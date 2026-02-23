@@ -1,7 +1,7 @@
 # Terraform + AWS Infrastructure (EC2 Ubuntu + EKS)
 
 This repository provisions the following in AWS account `014197010512`:
-- Ubuntu EC2 VM (`t3.medium`: 2 vCPU, 4 GiB RAM)
+- Ubuntu EC2 VM (`c7i-flex.large`: 2 vCPU, 4 GiB RAM)
 - EKS cluster control plane (AWS-managed)
 - EKS managed node group with **2 worker nodes**
 - Terraform remote state in **S3** + state locking in **DynamoDB**
@@ -12,7 +12,7 @@ In EKS, the Kubernetes control plane ("master") is managed by AWS. You create an
 - 2 worker nodes (managed node group)
 
 ## Cost / Free Tier Note
-`t3.medium` (2 vCPU / 4 GiB) is generally **not** AWS free tier. If you must stay in free tier, use smaller instances like `t2.micro`/`t3.micro` (where eligible), but they do not match 4 GiB RAM.
+`c7i-flex.large` (2 vCPU / 4 GiB) is listed by AWS as free-tier eligible for new accounts created on or after July 15, 2025, up to the stated monthly free-tier limits. Confirm your account eligibility before deployment.
 
 ## Repo Structure
 - `bootstrap/` creates S3 backend bucket + DynamoDB lock table
